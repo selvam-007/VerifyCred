@@ -1,0 +1,89 @@
+/* Dashboard Styles */
+.welcome-banner {
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
+}
+.welcome-banner h2 { margin-bottom: .2rem; font-size: 1.4rem; }
+.welcome-banner p  { font-size: .92rem; color: var(--gray-500); margin: 0; }
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+@media (max-width: 900px) { .dash-grid { grid-template-columns: 1fr; } }
+
+/* Certificate List Items */
+.cert-list { display: flex; flex-direction: column; gap: .2rem; }
+.cert-list-item {
+  display: flex; align-items: center; gap: .8rem;
+  padding: 10px 0; border-bottom: 1px solid var(--gray-100);
+}
+.cert-list-item:last-child { border-bottom: none; }
+.cert-li-icon { font-size: 1.4rem; flex-shrink: 0; }
+.cert-li-info { flex: 1; }
+.cert-li-name { font-size: .92rem; font-weight: 600; color: var(--gray-800); }
+.cert-li-sub  { font-size: .8rem; color: var(--gray-500); margin-top: 1px; }
+
+/* Quick Actions */
+.quick-actions-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-top: .5rem;
+}
+.quick-action-btn {
+  display: flex; flex-direction: column; align-items: center; gap: .4rem;
+  padding: 18px 12px; border-radius: var(--radius);
+  background: var(--gray-50); border: 1.5px solid var(--gray-200);
+  font-size: .85rem; font-weight: 600; color: var(--gray-700);
+  text-decoration: none; transition: var(--transition); text-align: center;
+}
+.quick-action-btn:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary); text-decoration: none; }
+.quick-action-btn span { font-size: 1.6rem; }
+
+/* User Menu */
+.user-menu {
+  display: flex; align-items: center; gap: .5rem;
+  cursor: pointer; position: relative; padding: 6px 10px;
+  border-radius: var(--radius-sm); transition: var(--transition);
+}
+.user-menu:hover { background: var(--gray-100); }
+.user-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--primary); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; font-weight: 700; flex-shrink: 0;
+}
+.user-name { font-size: .88rem; font-weight: 600; color: var(--gray-700); }
+.user-dropdown {
+  position: absolute; top: calc(100% + 4px); right: 0;
+  background: var(--white); border: 1px solid var(--gray-200);
+  border-radius: var(--radius); min-width: 180px;
+  box-shadow: var(--shadow); z-index: 50;
+  overflow: hidden;
+}
+.user-dropdown a {
+  display: flex; align-items: center; gap: .6rem;
+  padding: 10px 16px; font-size: .88rem; color: var(--gray-700);
+  text-decoration: none; transition: var(--transition);
+}
+.user-dropdown a:hover { background: var(--gray-50); color: var(--primary); }
+.user-dropdown .logout-link { color: var(--danger); }
+.user-dropdown .logout-link:hover { background: #fef2f2; }
+
+/* Notification Bell */
+.notif-bell {
+  position: relative; font-size: 1.3rem; cursor: pointer;
+  padding: 6px 8px; border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.notif-bell:hover { background: var(--gray-100); }
+.notif-count {
+  position: absolute; top: 2px; right: 2px;
+  background: var(--danger); color: white;
+  font-size: .6rem; font-weight: 700;
+  width: 16px; height: 16px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}

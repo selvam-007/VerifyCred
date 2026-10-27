@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Certificate – VerifyCred</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/verify.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="brand-icon">V</div>
+        Verify<span>Cred</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="verify.html" class="active">Verify</a>
+        <a href="login.html">Login</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="verify-hero">
+    <div class="container text-center">
+      <div class="hero-eyebrow">Instant Verification</div>
+      <h1>Verify a Certificate</h1>
+      <p>Enter the Certificate ID or scan the QR code to instantly verify the authenticity of any credential.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="verify-layout">
+
+        <!-- Search Panel -->
+        <div class="card verify-search-card">
+          <h3>Search by Certificate ID</h3>
+          <p class="mt-1">Enter the unique Certificate ID printed on the certificate.</p>
+          <div class="verify-input-row mt-3">
+            <input type="text" class="form-input" id="certIdInput" placeholder="e.g. VC-2024-AWS-00123" />
+            <button class="btn btn-primary" id="verifyBtn">Verify</button>
+          </div>
+          <div class="auth-divider mt-3"><span>or</span></div>
+          <div class="qr-scan-zone" id="qrScanZone">
+            <div style="font-size:3rem;">&#128201;</div>
+            <h4>Scan QR Code</h4>
+            <p>Point your camera at the QR code on the certificate</p>
+            <button class="btn btn-outline btn-sm mt-2" id="scanQrBtn">Start Camera Scan</button>
+          </div>
+          <p class="text-muted text-center mt-3" style="font-size:.82rem;">&#128274; Verification is secure and private. No login required.</p>
+        </div>
+
+        <!-- Result Panel -->
+        <div id="verifyResultPanel" class="hidden">
+
+          <!-- Verified Result -->
+          <div id="resultVerified" class="card verify-result-card verified hidden">
+            <div class="vr-header">
+              <div class="vr-icon-wrap success-wrap">&#10003;</div>
+              <div>
+                <h3 style="color:var(--accent);">Certificate Verified</h3>
+                <p>This certificate is authentic and has been verified by the institution.</p>
+              </div>
+            </div>
+            <table class="verify-table mt-3">
+              <tr><th>Certificate Name</th><td id="vCertName">AWS Cloud Practitioner</td></tr>
+              <tr><th>Certificate ID</th><td id="vCertId">VC-2024-AWS-00123</td></tr>
+              <tr><th>Student Name</th><td id="vStudentName">Tharun M</td></tr>
+              <tr><th>Roll Number</th><td id="vRollNo">24AIDS103</td></tr>
+              <tr><th>College</th><td id="vCollege">Anna University</td></tr>
+              <tr><th>Issued By</th><td id="vIssuedBy">Amazon Web Services</td></tr>
+              <tr><th>Issue Date</th><td id="vIssueDate">June 2025</td></tr>
+              <tr><th>Expiry Date</th><td id="vExpiry">June 2027</td></tr>
+              <tr><th>Category</th><td id="vCategory">Cloud Computing</td></tr>
+              <tr><th>Verification Status</th><td><span class="badge badge-success">&#9989; Verified by College</span></td></tr>
+              <tr><th>Digital Signature</th><td><span class="badge badge-success">&#128274; Valid Signature</span></td></tr>
+            </table>
+            <div class="verify-actions mt-3">
+              <a href="profile.html" class="btn btn-success btn-sm">&#128100; View Student Portfolio</a>
+              <button class="btn btn-ghost btn-sm" id="printCertBtn">&#128424; Print</button>
+              <button class="btn btn-ghost btn-sm" id="shareVerifyBtn">&#128279; Share Result</button>
+            </div>
+          </div>
+
+          <!-- Not Found Result -->
+          <div id="resultNotFound" class="card verify-result-card not-found hidden">
+            <div class="vr-header">
+              <div class="vr-icon-wrap danger-wrap">&#10005;</div>
+              <div>
+                <h3 style="color:var(--danger);">Certificate Not Found</h3>
+                <p>No certificate found with this ID. This may be a fake or invalid certificate.</p>
+              </div>
+            </div>
+            <div class="alert alert-danger mt-3">
+              &#9888; If you believe this is an error, please contact the institution directly or reach out to VerifyCred support.
+            </div>
+            <button class="btn btn-ghost btn-sm mt-2" id="tryAgainBtn">Try Again</button>
+          </div>
+
+        </div>
+
+        <!-- Demo QR Box -->
+        <div class="qr-box" id="demoQrBox">
+          <h4>Your Certificate QR Code</h4>
+          <p class="text-muted mt-1" style="font-size:.85rem;">Every verified certificate gets a unique QR code</p>
+          <div class="qr-placeholder mt-3">&#128201;</div>
+          <p class="text-muted mt-2" style="font-size:.82rem;">ID: VC-2024-AWS-00123</p>
+          <button class="btn btn-primary btn-sm mt-2" id="demoVerifyBtn">&#9989; Try Demo Verification</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="js/verify.js"></script>
+</body>
+</html>

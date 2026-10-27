@@ -1,0 +1,52 @@
+/* Upload Page Extra Styles */
+.upload-layout {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 1.5rem; align-items: flex-start;
+}
+@media (max-width: 900px) { .upload-layout { grid-template-columns: 1fr; } }
+
+.file-preview {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 14px 16px; margin-top: 1rem;
+  background: var(--accent-light); border: 1.5px solid #a7f3d0;
+  border-radius: var(--radius);
+}
+.file-preview-icon { font-size: 2rem; }
+.file-preview-info { flex: 1; }
+.file-preview-name { font-weight: 700; font-size: .9rem; color: var(--gray-800); }
+.file-preview-size { font-size: .82rem; }
+
+/* AI Analysis */
+.ai-analysis {
+  border: 1px solid var(--gray-200); border-radius: var(--radius);
+  padding: 14px 16px; background: var(--gray-50);
+}
+.ai-scanning { display: flex; align-items: center; gap: .8rem; font-size: .9rem; color: var(--gray-600); }
+.ai-spinner {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 2.5px solid var(--gray-200); border-top-color: var(--primary);
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.ai-result-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--gray-100); font-size: .88rem; color: var(--gray-700); }
+.ai-result-row:last-child { border-bottom: none; }
+
+/* Filter row */
+.cert-filters .filter-row { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; }
+.company-search-row { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; }
+
+/* Profile tabs */
+.profile-tabs {
+  display: flex; gap: .3rem; flex-wrap: wrap;
+  border-bottom: 1px solid var(--gray-200);
+  margin-bottom: 0;
+}
+.ptab {
+  padding: 10px 18px; border: none; background: none;
+  font-size: .9rem; font-weight: 600; color: var(--gray-500);
+  cursor: pointer; border-bottom: 3px solid transparent;
+  transition: var(--transition); margin-bottom: -1px;
+}
+.ptab:hover { color: var(--primary); }
+.ptab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+.ptab-content { padding-top: .5rem; }

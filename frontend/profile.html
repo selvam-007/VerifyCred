@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Profile – VerifyCred</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="brand-icon">V</div>
+        Verify<span>Cred</span>
+      </a>
+      <div class="nav-actions">
+        <a href="profile.html" class="btn btn-ghost btn-sm">Public View</a>
+        <div class="user-menu" id="userMenu">
+          <div class="user-avatar">TM</div>
+          <span class="user-name">Tharun M</span>
+          <div class="user-dropdown hidden" id="userDropdown">
+            <a href="dashboard.html">&#9776; Dashboard</a>
+            <a href="login.html">&#128682; Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-section-label">Main Menu</div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html"><span class="nav-icon">&#9776;</span> Dashboard</a>
+        <a href="upload.html"><span class="nav-icon">&#128196;</span> Upload Certificate</a>
+        <a href="certificates.html"><span class="nav-icon">&#127942;</span> My Certificates</a>
+        <a href="profile.html" class="active"><span class="nav-icon">&#128100;</span> My Profile</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-header flex-between" style="flex-wrap:wrap;gap:1rem;">
+        <div>
+          <h2>My Profile</h2>
+          <p>Your public portfolio — share this link with recruiters.</p>
+        </div>
+        <div class="flex gap-2">
+          <button class="btn btn-ghost btn-sm" id="copyLinkBtn">&#128279; Copy Portfolio Link</button>
+          <button class="btn btn-primary btn-sm" id="editProfileBtn">&#9998; Edit Profile</button>
+        </div>
+      </div>
+
+      <div id="copyAlert" class="alert alert-success hidden mb-2">&#10003; Portfolio link copied to clipboard!</div>
+
+      <!-- Profile Hero -->
+      <div class="profile-hero-section">
+        <div class="profile-avatar">TM</div>
+        <div class="profile-info" style="flex:1;">
+          <h2>Tharun M <span class="badge badge-success" style="font-size:.8rem;">Verified &#9989;</span></h2>
+          <p style="margin:2px 0 0;">B.E. AI &amp; Data Science &middot; Anna University</p>
+          <p style="margin:0;font-size:.88rem;color:var(--gray-500);">4th Year &middot; Roll: 24AIDS103 &middot; Chennai, Tamil Nadu</p>
+          <div class="profile-badges">
+            <span class="badge badge-primary">&#128279; verifycred.com/tharun</span>
+            <span class="badge badge-gray">&#128197; Joined 2024</span>
+            <span class="badge badge-success">&#128064; 852 Profile Views</span>
+          </div>
+          <div class="skills-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Docker</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;">
+          <a href="#" class="btn btn-ghost btn-sm">&#128279; GitHub</a>
+          <a href="#" class="btn btn-ghost btn-sm">&#128279; LinkedIn</a>
+          <a href="#" class="btn btn-primary btn-sm">&#128196; Download Resume</a>
+        </div>
+      </div>
+
+      <div class="profile-tabs">
+        <button class="ptab active" data-tab="certificates">Certificates (15)</button>
+        <button class="ptab" data-tab="projects">Projects (6)</button>
+        <button class="ptab" data-tab="internships">Internships (2)</button>
+        <button class="ptab" data-tab="achievements">Achievements (5)</button>
+        <button class="ptab" data-tab="about">About</button>
+      </div>
+
+      <!-- Certificates Tab -->
+      <div class="ptab-content" id="tab-certificates">
+        <div class="cert-grid mt-3">
+          <div class="cert-card">
+            <div class="cert-card-header">
+              <div><div class="cert-category">Cloud Computing</div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div></div>
+              <span class="badge badge-success">Verified</span>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-meta">&#128197; Jun 2025 &middot; Expires Jun 2027</div>
+              <div class="skills-list mt-2"><span class="skill-tag">AWS</span><span class="skill-tag">Cloud</span></div>
+            </div>
+            <div class="cert-card-footer">
+              <button class="btn btn-ghost btn-sm">&#128065; View</button>
+              <button class="btn btn-ghost btn-sm">&#128201; QR</button>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-card-header">
+              <div><div class="cert-category">Hackathon</div><div class="cert-name">Smart India Hackathon 2024</div><div class="cert-issuer">Ministry of Education</div></div>
+              <span class="badge badge-success">Verified</span>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-meta">&#128197; Dec 2024 &middot; &#127942; 1st Place</div>
+            </div>
+            <div class="cert-card-footer">
+              <button class="btn btn-ghost btn-sm">&#128065; View</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Tab -->
+      <div class="ptab-content hidden" id="tab-projects">
+        <div class="cert-grid mt-3">
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem;">
+              <div>
+                <h4>VerifyCred</h4>
+                <span class="badge badge-primary" style="margin-top:.3rem;">Final Year Project</span>
+              </div>
+              <span class="badge badge-success">Live</span>
+            </div>
+            <p style="font-size:.88rem;">Trusted digital certificate verification platform for students, colleges, and recruiters.</p>
+            <div class="skills-list mt-2">
+              <span class="skill-tag">React</span><span class="skill-tag">Node.js</span><span class="skill-tag">MySQL</span><span class="skill-tag">AI</span>
+            </div>
+            <div style="margin-top:.8rem;display:flex;gap:.5rem;">
+              <a href="#" class="btn btn-ghost btn-sm">&#128279; GitHub</a>
+              <a href="#" class="btn btn-ghost btn-sm">&#127760; Live Demo</a>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem;">
+              <div>
+                <h4>AI Resume Builder</h4>
+                <span class="badge badge-gray" style="margin-top:.3rem;">Personal Project</span>
+              </div>
+              <span class="badge badge-warning">In Progress</span>
+            </div>
+            <p style="font-size:.88rem;">Auto-generate professional resumes using AI based on GitHub and LinkedIn profiles.</p>
+            <div class="skills-list mt-2">
+              <span class="skill-tag">Python</span><span class="skill-tag">OpenAI API</span><span class="skill-tag">FastAPI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internships Tab -->
+      <div class="ptab-content hidden" id="tab-internships">
+        <div class="cert-grid mt-3">
+          <div class="card">
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <div style="width:46px;height:46px;border-radius:8px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">&#127970;</div>
+              <div style="flex:1;">
+                <h4>Software Developer Intern</h4>
+                <p style="margin:2px 0;font-size:.9rem;color:var(--gray-600);">TCS – Tata Consultancy Services</p>
+                <p style="margin:2px 0;font-size:.82rem;color:var(--gray-500);">May 2024 – Jul 2024 &middot; Chennai</p>
+                <span class="badge badge-success mt-1">Verified</span>
+                <p class="mt-2" style="font-size:.88rem;">Worked on REST API development using Node.js and MySQL for an internal HR portal.</p>
+                <div class="skills-list mt-2"><span class="skill-tag">Node.js</span><span class="skill-tag">MySQL</span><span class="skill-tag">REST API</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements Tab -->
+      <div class="ptab-content hidden" id="tab-achievements">
+        <div class="cert-grid mt-3">
+          <div class="card" style="text-align:center;">
+            <div style="font-size:2.5rem;">&#127942;</div>
+            <h4 class="mt-2">Smart India Hackathon Winner</h4>
+            <p style="font-size:.88rem;">1st Place – National Level Hackathon by Ministry of Education</p>
+            <span class="badge badge-success mt-2">Verified</span>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div style="font-size:2.5rem;">&#127941;</div>
+            <h4 class="mt-2">College Topper – Semester 5</h4>
+            <p style="font-size:.88rem;">CGPA 9.4 &middot; Department Rank 1</p>
+            <span class="badge badge-success mt-2">Verified</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Tab -->
+      <div class="ptab-content hidden" id="tab-about">
+        <div class="card mt-3">
+          <h4 class="mb-3">About</h4>
+          <div class="form-group">
+            <label class="form-label">Bio</label>
+            <textarea class="form-textarea" id="bio" placeholder="Write something about yourself...">Final year B.E. AI &amp; Data Science student with a passion for building scalable web applications and exploring machine learning. Experienced in full-stack development, cloud computing, and competitive programming.</textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">GitHub</label>
+              <input type="url" class="form-input" value="https://github.com/tharunm" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">LinkedIn</label>
+              <input type="url" class="form-input" value="https://linkedin.com/in/tharunm" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">LeetCode</label>
+              <input type="url" class="form-input" placeholder="Your LeetCode profile" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">HackerRank</label>
+              <input type="url" class="form-input" placeholder="Your HackerRank profile" />
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm">Save Changes</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/profile.js"></script>
+</body>
+</html>

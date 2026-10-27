@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Certificates – VerifyCred</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="brand-icon">V</div>
+        Verify<span>Cred</span>
+      </a>
+      <div class="nav-actions">
+        <div class="user-menu" id="userMenu">
+          <div class="user-avatar">TM</div>
+          <span class="user-name">Tharun M</span>
+          <div class="user-dropdown hidden" id="userDropdown">
+            <a href="profile.html">&#128100; My Profile</a>
+            <a href="dashboard.html">&#9776; Dashboard</a>
+            <a href="login.html">&#128682; Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-section-label">Main Menu</div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html"><span class="nav-icon">&#9776;</span> Dashboard</a>
+        <a href="upload.html"><span class="nav-icon">&#128196;</span> Upload Certificate</a>
+        <a href="certificates.html" class="active"><span class="nav-icon">&#127942;</span> My Certificates</a>
+        <a href="profile.html"><span class="nav-icon">&#128100;</span> My Profile</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-header flex-between" style="flex-wrap:wrap;gap:1rem;">
+        <div>
+          <h2>My Certificates</h2>
+          <p>All your uploaded and verified certificates.</p>
+        </div>
+        <a href="upload.html" class="btn btn-primary">+ Add Certificate</a>
+      </div>
+
+      <!-- Filters -->
+      <div class="cert-filters card mb-4">
+        <div class="filter-row">
+          <input type="search" class="form-input" placeholder="&#128269; Search certificates..." id="certSearch" style="max-width:280px;" />
+          <select class="form-select" id="filterCategory" style="max-width:180px;">
+            <option value="">All Categories</option>
+            <option>Cloud Computing</option>
+            <option>Programming</option>
+            <option>Web Development</option>
+            <option>Data Science</option>
+            <option>Hackathon</option>
+            <option>Internship</option>
+          </select>
+          <select class="form-select" id="filterStatus" style="max-width:160px;">
+            <option value="">All Status</option>
+            <option value="verified">Verified</option>
+            <option value="pending">Pending</option>
+            <option value="rejected">Rejected</option>
+          </select>
+          <button class="btn btn-ghost btn-sm" id="filterBtn">Filter</button>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row" style="margin-bottom:1.5rem;">
+        <div class="stat-card"><div class="stat-icon" style="background:#eff6ff;">&#127942;</div><div class="stat-info"><div class="stat-value">15</div><div class="stat-name">Total</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#ecfdf5;">&#9989;</div><div class="stat-info"><div class="stat-value">12</div><div class="stat-name">Verified</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#fffbeb;">&#9203;</div><div class="stat-info"><div class="stat-value">3</div><div class="stat-name">Pending</div></div></div>
+      </div>
+
+      <!-- Certificate Grid -->
+      <div class="cert-grid" id="certGrid">
+
+        <div class="cert-card" data-status="verified" data-category="Cloud Computing">
+          <div class="cert-card-header">
+            <div>
+              <div class="cert-category">Cloud Computing</div>
+              <div class="cert-name">AWS Cloud Practitioner</div>
+              <div class="cert-issuer">Amazon Web Services</div>
+            </div>
+            <span class="badge badge-success">Verified</span>
+          </div>
+          <div class="cert-card-body">
+            <div class="cert-meta">&#128197; Issued: Jun 2025 &nbsp;|&nbsp; &#9201; Expires: Jun 2027</div>
+            <div class="cert-meta">&#128268; ID: AWS-CLF-2024-00123</div>
+            <div class="skills-list mt-2">
+              <span class="skill-tag">AWS</span><span class="skill-tag">Cloud</span><span class="skill-tag">EC2</span><span class="skill-tag">S3</span>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <button class="btn btn-ghost btn-sm">&#128065; View</button>
+            <button class="btn btn-ghost btn-sm">&#128279; Share</button>
+            <button class="btn btn-ghost btn-sm">&#128201; QR Code</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-status="verified" data-category="Programming">
+          <div class="cert-card-header">
+            <div>
+              <div class="cert-category">Programming</div>
+              <div class="cert-name">Python for Data Science</div>
+              <div class="cert-issuer">Coursera – IBM</div>
+            </div>
+            <span class="badge badge-success">Verified</span>
+          </div>
+          <div class="cert-card-body">
+            <div class="cert-meta">&#128197; Issued: May 2025 &nbsp;|&nbsp; No Expiry</div>
+            <div class="skills-list mt-2">
+              <span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <button class="btn btn-ghost btn-sm">&#128065; View</button>
+            <button class="btn btn-ghost btn-sm">&#128279; Share</button>
+            <button class="btn btn-ghost btn-sm">&#128201; QR Code</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-status="pending" data-category="Web Development">
+          <div class="cert-card-header">
+            <div>
+              <div class="cert-category">Web Development</div>
+              <div class="cert-name">React.js Advanced</div>
+              <div class="cert-issuer">Udemy</div>
+            </div>
+            <span class="badge badge-warning">Pending</span>
+          </div>
+          <div class="cert-card-body">
+            <div class="cert-meta">&#128197; Issued: Jul 2025 &nbsp;|&nbsp; No Expiry</div>
+            <div class="cert-meta" style="color:var(--warning);">&#9888; Awaiting college verification</div>
+            <div class="skills-list mt-2">
+              <span class="skill-tag">React</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Redux</span>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <button class="btn btn-ghost btn-sm">&#128065; View</button>
+            <button class="btn btn-danger btn-sm">&#128465; Delete</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-status="verified" data-category="Hackathon">
+          <div class="cert-card-header">
+            <div>
+              <div class="cert-category">Hackathon</div>
+              <div class="cert-name">Smart India Hackathon 2024</div>
+              <div class="cert-issuer">Ministry of Education</div>
+            </div>
+            <span class="badge badge-success">Verified</span>
+          </div>
+          <div class="cert-card-body">
+            <div class="cert-meta">&#128197; Dec 2024 &nbsp;|&nbsp; &#127942; Winner – 1st Place</div>
+            <div class="skills-list mt-2">
+              <span class="skill-tag">Problem Solving</span><span class="skill-tag">Teamwork</span>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <button class="btn btn-ghost btn-sm">&#128065; View</button>
+            <button class="btn btn-ghost btn-sm">&#128279; Share</button>
+            <button class="btn btn-ghost btn-sm">&#128201; QR Code</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-status="verified" data-category="Internship">
+          <div class="cert-card-header">
+            <div>
+              <div class="cert-category">Internship</div>
+              <div class="cert-name">Software Developer Intern</div>
+              <div class="cert-issuer">TCS – Tata Consultancy Services</div>
+            </div>
+            <span class="badge badge-success">Verified</span>
+          </div>
+          <div class="cert-card-body">
+            <div class="cert-meta">&#128197; May – Jul 2024 &nbsp;|&nbsp; 60 Days</div>
+            <div class="skills-list mt-2">
+              <span class="skill-tag">Node.js</span><span class="skill-tag">MySQL</span><span class="skill-tag">REST API</span>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <button class="btn btn-ghost btn-sm">&#128065; View</button>
+            <button class="btn btn-ghost btn-sm">&#128279; Share</button>
+          </div>
+        </div>
+
+        <div class="cert-card" data-status="pending" data-category="Data Science">
+          <div class="cert-card-header">
+            <div>
+              <div class="cert-category">Data Science</div>
+              <div class="cert-name">Machine Learning Specialization</div>
+              <div class="cert-issuer">Coursera – Stanford</div>
+            </div>
+            <span class="badge badge-warning">Pending</span>
+          </div>
+          <div class="cert-card-body">
+            <div class="cert-meta">&#128197; Jun 2025</div>
+            <div class="skills-list mt-2">
+              <span class="skill-tag">ML</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Python</span>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <button class="btn btn-ghost btn-sm">&#128065; View</button>
+            <button class="btn btn-danger btn-sm">&#128465; Delete</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filter logic
+    document.getElementById('certSearch').addEventListener('input', filterCerts);
+    document.getElementById('filterStatus').addEventListener('change', filterCerts);
+    document.getElementById('filterCategory').addEventListener('change', filterCerts);
+    function filterCerts() {
+      const q = document.getElementById('certSearch').value.toLowerCase();
+      const status = document.getElementById('filterStatus').value.toLowerCase();
+      const cat = document.getElementById('filterCategory').value.toLowerCase();
+      document.querySelectorAll('.cert-card').forEach(card => {
+        const name = card.querySelector('.cert-name').textContent.toLowerCase();
+        const s = card.dataset.status;
+        const c = card.dataset.category.toLowerCase();
+        const matchQ = !q || name.includes(q);
+        const matchS = !status || s === status;
+        const matchC = !cat || c.includes(cat.toLowerCase());
+        card.style.display = (matchQ && matchS && matchC) ? '' : 'none';
+      });
+    }
+    // User menu
+    document.getElementById('userMenu').addEventListener('click', function(e) {
+      document.getElementById('userDropdown').classList.toggle('hidden');
+      e.stopPropagation();
+    });
+    document.addEventListener('click', () => document.getElementById('userDropdown').classList.add('hidden'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard – VerifyCred</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="brand-icon">V</div>
+        Verify<span>Cred</span>
+      </a>
+      <div class="nav-actions">
+        <span class="badge badge-danger">&#128736; Admin Portal</span>
+        <div class="user-menu" id="userMenu">
+          <div class="user-avatar" style="background:var(--danger);">AD</div>
+          <span class="user-name">Super Admin</span>
+          <div class="user-dropdown hidden" id="userDropdown">
+            <a href="login.html">&#128682; Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-section-label">Admin Menu</div>
+      <nav class="sidebar-nav">
+        <a href="admin.html" class="active"><span class="nav-icon">&#9776;</span> Dashboard</a>
+        <a href="#students"><span class="nav-icon">&#127891;</span> Manage Students</a>
+        <a href="#colleges"><span class="nav-icon">&#127979;</span> Manage Colleges</a>
+        <a href="#companies"><span class="nav-icon">&#127970;</span> Manage Companies</a>
+        <a href="#certs"><span class="nav-icon">&#127942;</span> Certificates</a>
+        <a href="#approvals"><span class="nav-icon">&#9989;</span> Approvals</a>
+        <a href="#reports"><span class="nav-icon">&#128200;</span> Reports</a>
+        <a href="#ai"><span class="nav-icon">&#129302;</span> AI Dashboard</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-header">
+        <h2>Admin Dashboard &#128736;</h2>
+        <p>Platform overview, user management, and analytics.</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr));">
+        <div class="stat-card"><div class="stat-icon" style="background:#eff6ff;">&#127891;</div><div class="stat-info"><div class="stat-value">52,480</div><div class="stat-name">Students</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#f5f3ff;">&#127979;</div><div class="stat-info"><div class="stat-value">1,240</div><div class="stat-name">Colleges</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#ecfdf5;">&#127970;</div><div class="stat-info"><div class="stat-value">820</div><div class="stat-name">Companies</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#fffbeb;">&#127942;</div><div class="stat-info"><div class="stat-value">2,14,500</div><div class="stat-name">Certificates</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#fef2f2;">&#9888;</div><div class="stat-info"><div class="stat-value">124</div><div class="stat-name">Flagged Fake</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#ecfdf5;">&#9989;</div><div class="stat-info"><div class="stat-value">98.4%</div><div class="stat-name">Verified Rate</div></div></div>
+      </div>
+
+      <!-- Approval Queue -->
+      <div class="card mb-4" id="approvals">
+        <div class="card-header">
+          <span class="card-title">Pending College Approvals</span>
+          <span class="badge badge-warning">5 Pending</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>College Name</th><th>City</th><th>Type</th><th>Applied</th><th>Documents</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sathyabama Institute of Science &amp; Technology</td>
+                <td>Chennai</td>
+                <td>Deemed University</td>
+                <td>2 days ago</td>
+                <td><span class="badge badge-success">Submitted</span></td>
+                <td><div style="display:flex;gap:.4rem;"><button class="btn btn-success btn-sm">&#10003; Approve</button><button class="btn btn-danger btn-sm">&#10005; Reject</button></div></td>
+              </tr>
+              <tr>
+                <td>Jerusalem College of Engineering</td>
+                <td>Chennai</td>
+                <td>Private Engineering College</td>
+                <td>3 days ago</td>
+                <td><span class="badge badge-success">Submitted</span></td>
+                <td><div style="display:flex;gap:.4rem;"><button class="btn btn-success btn-sm">&#10003; Approve</button><button class="btn btn-danger btn-sm">&#10005; Reject</button></div></td>
+              </tr>
+              <tr>
+                <td>Panimalar Engineering College</td>
+                <td>Chennai</td>
+                <td>Private Engineering College</td>
+                <td>5 days ago</td>
+                <td><span class="badge badge-warning">Incomplete</span></td>
+                <td><div style="display:flex;gap:.4rem;"><button class="btn btn-success btn-sm">&#10003; Approve</button><button class="btn btn-danger btn-sm">&#10005; Reject</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Students Table -->
+      <div class="card mb-4" id="students">
+        <div class="card-header">
+          <span class="card-title">Recent Students</span>
+          <div style="display:flex;gap:.5rem;">
+            <input type="search" class="form-input" placeholder="&#128269; Search..." style="max-width:200px;" id="adminStudentSearch" />
+            <button class="btn btn-ghost btn-sm">Export</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Name</th><th>Roll No.</th><th>College</th><th>Certs</th><th>Status</th><th>Joined</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:.5rem;"><div class="user-avatar" style="width:28px;height:28px;font-size:.7rem;">TM</div>Tharun M</div></td>
+                <td>24AIDS103</td>
+                <td>Anna University</td>
+                <td>15</td>
+                <td><span class="badge badge-success">Active</span></td>
+                <td>Jan 2024</td>
+                <td><button class="btn btn-ghost btn-sm">&#128065; View</button></td>
+              </tr>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:.5rem;"><div class="user-avatar" style="width:28px;height:28px;font-size:.7rem;background:var(--secondary);">PS</div>Priya S</div></td>
+                <td>24AIDS106</td>
+                <td>VIT Chennai</td>
+                <td>12</td>
+                <td><span class="badge badge-success">Active</span></td>
+                <td>Jan 2024</td>
+                <td><button class="btn btn-ghost btn-sm">&#128065; View</button></td>
+              </tr>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:.5rem;"><div class="user-avatar" style="width:28px;height:28px;font-size:.7rem;background:var(--danger);">VR</div>Vikram R</div></td>
+                <td>24AIDS112</td>
+                <td>Anna University</td>
+                <td>8</td>
+                <td><span class="badge badge-warning">Suspended</span></td>
+                <td>Jan 2024</td>
+                <td><button class="btn btn-ghost btn-sm">&#128065; View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- AI Dashboard -->
+      <div class="card" id="ai">
+        <div class="card-header">
+          <span class="card-title">&#129302; AI Fake Certificate Detection Log</span>
+          <span class="badge badge-danger">124 Flagged this month</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Student</th><th>Certificate</th><th>Issue</th><th>Confidence</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Vikram R (24AIDS112)</td>
+                <td>AWS Solutions Architect</td>
+                <td><span class="badge badge-danger">Modified Name</span></td>
+                <td><span style="color:var(--danger);font-weight:700;">97%</span></td>
+                <td><button class="btn btn-danger btn-sm">Reject &amp; Notify</button></td>
+              </tr>
+              <tr>
+                <td>Unknown Student</td>
+                <td>Google Cloud Certificate</td>
+                <td><span class="badge badge-danger">Fake Logo</span></td>
+                <td><span style="color:var(--danger);font-weight:700;">89%</span></td>
+                <td><button class="btn btn-danger btn-sm">Reject &amp; Notify</button></td>
+              </tr>
+              <tr>
+                <td>Random Student</td>
+                <td>Microsoft Azure</td>
+                <td><span class="badge badge-warning">Duplicate</span></td>
+                <td><span style="color:var(--warning);font-weight:700;">74%</span></td>
+                <td><button class="btn btn-ghost btn-sm">Review</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('userMenu').addEventListener('click', function(e) {
+      document.getElementById('userDropdown').classList.toggle('hidden');
+      e.stopPropagation();
+    });
+    document.addEventListener('click', () => document.getElementById('userDropdown').classList.add('hidden'));
+    document.querySelectorAll('.btn-success, .btn-danger').forEach(btn => {
+      if (btn.textContent.includes('Approve') || btn.textContent.includes('Reject')) {
+        btn.addEventListener('click', function() {
+          const row = this.closest('tr');
+          row.style.opacity = '.4';
+          row.style.pointerEvents = 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

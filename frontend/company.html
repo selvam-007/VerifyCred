@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Portal – VerifyCred</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="brand-icon">V</div>
+        Verify<span>Cred</span>
+      </a>
+      <div class="nav-actions">
+        <span class="badge badge-success">&#127970; Company Portal</span>
+        <div class="user-menu" id="userMenu">
+          <div class="user-avatar" style="background:var(--accent);">IN</div>
+          <span class="user-name">Infosys Recruiter</span>
+          <div class="user-dropdown hidden" id="userDropdown">
+            <a href="login.html">&#128682; Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-section-label">Company Menu</div>
+      <nav class="sidebar-nav">
+        <a href="company.html" class="active"><span class="nav-icon">&#9776;</span> Dashboard</a>
+        <a href="#search"><span class="nav-icon">&#128269;</span> Search Candidates</a>
+        <a href="#saved"><span class="nav-icon">&#128203;</span> Saved Candidates</a>
+        <a href="verify.html"><span class="nav-icon">&#9989;</span> Verify Certificate</a>
+        <a href="#analytics"><span class="nav-icon">&#128200;</span> Analytics</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-header">
+        <h2>Recruitment Dashboard &#127970;</h2>
+        <p>Infosys – Chennai Campus &middot; Find and verify top candidates instantly.</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card"><div class="stat-icon" style="background:#eff6ff;">&#128064;</div><div class="stat-info"><div class="stat-value">248</div><div class="stat-name">Profiles Viewed</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#ecfdf5;">&#9989;</div><div class="stat-info"><div class="stat-value">86</div><div class="stat-name">Verified</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#f5f3ff;">&#128203;</div><div class="stat-info"><div class="stat-value">34</div><div class="stat-name">Saved</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#fff7ed;">&#128231;</div><div class="stat-info"><div class="stat-value">12</div><div class="stat-name">Contacted</div></div></div>
+      </div>
+
+      <!-- Search -->
+      <div class="card mb-4" id="search">
+        <div class="card-header">
+          <span class="card-title">Search Candidates</span>
+        </div>
+        <div class="company-search-row">
+          <input type="text" class="form-input" id="candidateSearch" placeholder="&#128269; Search by name, skill, or college..." style="flex:1;" />
+          <select class="form-select" id="filterDept" style="width:200px;">
+            <option value="">All Departments</option>
+            <option>Computer Science Engineering</option>
+            <option>AI &amp; Data Science</option>
+            <option>Information Technology</option>
+          </select>
+          <select class="form-select" id="filterYear" style="width:140px;">
+            <option value="">All Years</option>
+            <option>4th Year</option>
+            <option>3rd Year</option>
+          </select>
+          <button class="btn btn-primary" id="searchBtn">Search</button>
+        </div>
+      </div>
+
+      <!-- Candidate Cards -->
+      <div class="cert-grid" id="candidateGrid">
+
+        <div class="card candidate-card">
+          <div style="display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;">
+            <div class="user-avatar" style="width:44px;height:44px;font-size:.9rem;background:var(--primary);">TM</div>
+            <div style="flex:1;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <h4 style="margin-bottom:2px;">Tharun M</h4>
+                  <p style="font-size:.82rem;margin:0;color:var(--gray-500);">AI &amp; Data Science &middot; 4th Year &middot; Anna University</p>
+                </div>
+                <span class="badge badge-success">&#9989; Verified</span>
+              </div>
+              <div class="skills-list mt-2">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">ML</span>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:.82rem;color:var(--gray-500);display:flex;gap:1.2rem;margin-bottom:.8rem;">
+            <span>&#127942; 15 Certificates</span>
+            <span>&#128187; 6 Projects</span>
+            <span>&#128188; 2 Internships</span>
+            <span>&#128064; 852 Views</span>
+          </div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+            <a href="profile.html" class="btn btn-ghost btn-sm">&#128100; View Portfolio</a>
+            <button class="btn btn-outline btn-sm">&#128231; Contact</button>
+            <button class="btn btn-ghost btn-sm save-btn">&#128203; Save</button>
+          </div>
+        </div>
+
+        <div class="card candidate-card">
+          <div style="display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;">
+            <div class="user-avatar" style="width:44px;height:44px;font-size:.9rem;background:var(--secondary);">PS</div>
+            <div style="flex:1;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <h4 style="margin-bottom:2px;">Priya Sharma</h4>
+                  <p style="font-size:.82rem;margin:0;color:var(--gray-500);">Computer Science &middot; 4th Year &middot; VIT Chennai</p>
+                </div>
+                <span class="badge badge-success">&#9989; Verified</span>
+              </div>
+              <div class="skills-list mt-2">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">Docker</span>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:.82rem;color:var(--gray-500);display:flex;gap:1.2rem;margin-bottom:.8rem;">
+            <span>&#127942; 12 Certificates</span>
+            <span>&#128187; 4 Projects</span>
+            <span>&#128188; 1 Internship</span>
+          </div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+            <a href="profile.html" class="btn btn-ghost btn-sm">&#128100; View Portfolio</a>
+            <button class="btn btn-outline btn-sm">&#128231; Contact</button>
+            <button class="btn btn-ghost btn-sm save-btn">&#128203; Save</button>
+          </div>
+        </div>
+
+        <div class="card candidate-card">
+          <div style="display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;">
+            <div class="user-avatar" style="width:44px;height:44px;font-size:.9rem;background:var(--accent);">AR</div>
+            <div style="flex:1;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <h4 style="margin-bottom:2px;">Arun Raj</h4>
+                  <p style="font-size:.82rem;margin:0;color:var(--gray-500);">Information Technology &middot; 3rd Year &middot; SRM</p>
+                </div>
+                <span class="badge badge-success">&#9989; Verified</span>
+              </div>
+              <div class="skills-list mt-2">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">React</span>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:.82rem;color:var(--gray-500);display:flex;gap:1.2rem;margin-bottom:.8rem;">
+            <span>&#127942; 9 Certificates</span>
+            <span>&#128187; 3 Projects</span>
+          </div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+            <a href="profile.html" class="btn btn-ghost btn-sm">&#128100; View Portfolio</a>
+            <button class="btn btn-outline btn-sm">&#128231; Contact</button>
+            <button class="btn btn-ghost btn-sm save-btn">&#128203; Save</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.textContent = '&#9989; Saved';
+        this.classList.remove('btn-ghost');
+        this.classList.add('btn-success');
+      });
+    });
+    document.getElementById('userMenu').addEventListener('click', function(e) {
+      document.getElementById('userDropdown').classList.toggle('hidden');
+      e.stopPropagation();
+    });
+    document.addEventListener('click', () => document.getElementById('userDropdown').classList.add('hidden'));
+  </script>
+</body>
+</html>

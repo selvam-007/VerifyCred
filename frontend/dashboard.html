@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard – VerifyCred</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="brand-icon">V</div>
+        Verify<span>Cred</span>
+      </a>
+      <div class="nav-actions">
+        <span style="font-size:.88rem;color:var(--gray-500);">verifycred.com/tharun</span>
+        <div class="notif-bell" id="notifBell" title="Notifications">
+          &#128276;<span class="notif-count">3</span>
+        </div>
+        <div class="user-menu" id="userMenu">
+          <div class="user-avatar">TM</div>
+          <span class="user-name">Tharun M</span>
+          <span style="color:var(--gray-400);">&#9660;</span>
+          <div class="user-dropdown hidden" id="userDropdown">
+            <a href="profile.html">&#128100; My Profile</a>
+            <a href="profile.html">&#9998; Edit Profile</a>
+            <a href="index.html">&#128682; My Portfolio</a>
+            <hr style="border:none;border-top:1px solid var(--gray-100);margin:.4rem 0;" />
+            <a href="login.html" class="logout-link">&#128682; Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-section-label">Main Menu</div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="active">
+          <span class="nav-icon">&#9776;</span> Dashboard
+        </a>
+        <a href="upload.html">
+          <span class="nav-icon">&#128196;</span> Upload Certificate
+        </a>
+        <a href="certificates.html">
+          <span class="nav-icon">&#127942;</span> My Certificates
+        </a>
+        <a href="profile.html">
+          <span class="nav-icon">&#128100;</span> My Profile
+        </a>
+      </nav>
+      <div class="sidebar-section-label">Portfolio</div>
+      <nav class="sidebar-nav">
+        <a href="#projects">
+          <span class="nav-icon">&#128187;</span> Projects
+        </a>
+        <a href="#internships">
+          <span class="nav-icon">&#128188;</span> Internships
+        </a>
+        <a href="#achievements">
+          <span class="nav-icon">&#127941;</span> Achievements
+        </a>
+        <a href="#resume">
+          <span class="nav-icon">&#128196;</span> Resume
+        </a>
+      </nav>
+      <div class="sidebar-section-label">Tools</div>
+      <nav class="sidebar-nav">
+        <a href="verify.html">
+          <span class="nav-icon">&#9989;</span> QR Verify
+        </a>
+        <a href="#analytics">
+          <span class="nav-icon">&#128200;</span> Analytics
+        </a>
+        <a href="#notifications">
+          <span class="nav-icon">&#128276;</span> Notifications
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- Welcome Banner -->
+      <div class="welcome-banner">
+        <div>
+          <h2>Welcome back, Tharun! &#128075;</h2>
+          <p>Here's an overview of your verified digital portfolio.</p>
+        </div>
+        <div class="flex gap-2">
+          <a href="upload.html" class="btn btn-primary btn-sm">+ Upload Certificate</a>
+          <a href="profile.html" class="btn btn-ghost btn-sm">View Portfolio</a>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#eff6ff;">&#127942;</div>
+          <div class="stat-info">
+            <div class="stat-value">15</div>
+            <div class="stat-name">Certificates</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#ecfdf5;">&#9989;</div>
+          <div class="stat-info">
+            <div class="stat-value">12</div>
+            <div class="stat-name">Verified</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#fffbeb;">&#9203;</div>
+          <div class="stat-info">
+            <div class="stat-value">3</div>
+            <div class="stat-name">Pending</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#f5f3ff;">&#128187;</div>
+          <div class="stat-info">
+            <div class="stat-value">6</div>
+            <div class="stat-name">Projects</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#fff7ed;">&#128188;</div>
+          <div class="stat-info">
+            <div class="stat-value">2</div>
+            <div class="stat-name">Internships</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#fef2f2;">&#127941;</div>
+          <div class="stat-info">
+            <div class="stat-value">5</div>
+            <div class="stat-name">Hackathons</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#ecfdf5;">&#128064;</div>
+          <div class="stat-info">
+            <div class="stat-value">852</div>
+            <div class="stat-name">Profile Views</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="dash-grid">
+
+        <!-- Recent Certificates -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Recent Certificates</span>
+            <a href="certificates.html" class="btn btn-ghost btn-sm">View All</a>
+          </div>
+          <div class="cert-list">
+            <div class="cert-list-item">
+              <div class="cert-li-icon">&#127942;</div>
+              <div class="cert-li-info">
+                <div class="cert-li-name">AWS Cloud Practitioner</div>
+                <div class="cert-li-sub">Amazon Web Services &middot; Jun 2025</div>
+              </div>
+              <span class="badge badge-success">Verified</span>
+            </div>
+            <div class="cert-list-item">
+              <div class="cert-li-icon">&#127942;</div>
+              <div class="cert-li-info">
+                <div class="cert-li-name">Python for Data Science</div>
+                <div class="cert-li-sub">Coursera &middot; May 2025</div>
+              </div>
+              <span class="badge badge-success">Verified</span>
+            </div>
+            <div class="cert-list-item">
+              <div class="cert-li-icon">&#9203;</div>
+              <div class="cert-li-info">
+                <div class="cert-li-name">React.js Advanced</div>
+                <div class="cert-li-sub">Udemy &middot; Jul 2025</div>
+              </div>
+              <span class="badge badge-warning">Pending</span>
+            </div>
+            <div class="cert-list-item">
+              <div class="cert-li-icon">&#127942;</div>
+              <div class="cert-li-info">
+                <div class="cert-li-name">Smart India Hackathon 2024</div>
+                <div class="cert-li-sub">MoE &middot; Dec 2024</div>
+              </div>
+              <span class="badge badge-success">Verified</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Activity Timeline</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="tl-time">Today, 10:30 AM</div>
+              <div class="tl-text">Certificate Uploaded</div>
+              <div class="tl-detail">React.js Advanced – Udemy</div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">Yesterday, 3:15 PM</div>
+              <div class="tl-text">Certificate Verified &#9989;</div>
+              <div class="tl-detail">AWS Cloud Practitioner verified by faculty</div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">25 Jun 2025</div>
+              <div class="tl-text">Project Added</div>
+              <div class="tl-detail">VerifyCred – Final Year Project</div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">20 Jun 2025</div>
+              <div class="tl-text">Internship Approved &#127881;</div>
+              <div class="tl-detail">TCS Summer Internship – Verified</div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">15 Jun 2025</div>
+              <div class="tl-text">Profile Viewed</div>
+              <div class="tl-detail">Viewed by Infosys Recruiter</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Notifications</span>
+            <span class="badge badge-primary">3 New</span>
+          </div>
+          <div>
+            <div class="notif-item">
+              <div class="notif-dot"></div>
+              <div>
+                <div class="notif-text">Your AWS certificate has been verified by your college &#9989;</div>
+                <div class="notif-time">2 hours ago</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-dot"></div>
+              <div>
+                <div class="notif-text">New profile view from an Infosys recruiter &#128064;</div>
+                <div class="notif-time">5 hours ago</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-dot"></div>
+              <div>
+                <div class="notif-text">Your portfolio link was shared 3 times today &#128279;</div>
+                <div class="notif-time">1 day ago</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-dot read"></div>
+              <div>
+                <div class="notif-text">Internship certificate approved by Department Head</div>
+                <div class="notif-time">3 days ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Quick Actions</span>
+          </div>
+          <div class="quick-actions-grid">
+            <a href="upload.html" class="quick-action-btn">
+              <span>&#128196;</span> Upload Certificate
+            </a>
+            <a href="#" class="quick-action-btn" id="generateResumeBtn">
+              <span>&#128196;</span> Generate Resume
+            </a>
+            <a href="profile.html" class="quick-action-btn">
+              <span>&#128279;</span> Share Portfolio
+            </a>
+            <a href="verify.html" class="quick-action-btn">
+              <span>&#9989;</span> Verify QR Code
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
